@@ -1,0 +1,422 @@
+<!--
+   Copyright 2016 Google Inc.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/content"
+    tools:context="com.example.air_draw.drawer.DrawActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.opengl.GLSurfaceView
+            android:id="@+id/surfaceview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="top"
+            android:layout_weight="1" />
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/r_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/strokeUI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topBar"
+            android:background="@color/cardview_light_background"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+
+            <Switch
+                android:id="@+id/debugView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:checked="false"
+                android:onClick="onClickLineDebug"
+                android:text="하이라이트"
+                android:textColor="@android:color/black"
+                android:visibility="gone"
+                tools:checked="false" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="선 굵기"
+                android:textColor="@android:color/black" />
+
+            <SeekBar
+                android:id="@+id/lineWidth"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:max="100"
+                android:progress="50" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Distance Scale"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+            <SeekBar
+                android:id="@+id/distanceScale"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:max="100"
+                android:progress="50"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Smoothing"
+                android:textColor="@android:color/black"
+                android:visibility="gone" />
+
+            <SeekBar
+                android:id="@+id/smoothingSeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:max="100"
+                android:progress="50"
+                android:visibility="gone" />
+
+            <TableLayout
+                android:id="@+id/pallete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TableRow>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/origin_red"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/origin_orange"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/origin_yellow"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/origin_green"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/teal_700"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/teal_200"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/origin_blue"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/origin_violet"></LinearLayout>
+                </TableRow>
+
+                <TableRow>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/purple_200"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/purple_500"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/purple_700"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/origin_indigo"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/color_year2022"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/gray"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/black"></LinearLayout>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/white">
+
+            <ImageButton
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/home"
+                android:maxWidth="35dp"
+                android:maxHeight="35dp"
+                android:onClick="onBtnClick"
+                android:scaleType="fitCenter"
+                android:text="홈" />
+
+            <Button
+                android:id="@+id/topbutton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:text="전환"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/topbutton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/gallery"
+                android:maxWidth="35dp"
+                android:maxHeight="35dp"
+                android:scaleType="fitCenter"
+                android:text="앨범" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/centerBar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_above="@id/bottomBar"
+            android:layout_centerHorizontal="true">
+
+            <RelativeLayout
+                android:id="@+id/ToolKit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                >
+
+                <Button
+                    android:id="@+id/toolbtn01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="175dp"
+                    android:background="#00ff0000"
+                    android:drawableTop="@drawable/deleteback"
+                    android:onClick="onClickUndo"
+                    android:text="취소"
+                    android:textColor="@color/white" />
+
+
+                <Button
+                    android:id="@+id/toolbtn02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="50dp"
+                    android:background="#00ff0000"
+                    android:drawableTop="@drawable/focus"
+                    android:onClick="onClickRecenter"
+                    android:text="위치"
+                    android:textColor="@color/white"/>
+
+                <Button
+                    android:id="@+id/toolbtn03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="175dp"
+                    android:background="#00ff0000"
+                    android:drawableTop="@drawable/delete"
+                    android:onClick="onClickClear"
+                    android:text="삭제"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/settingsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="50dp"
+                    android:background="#00ff0000"
+                    android:drawableTop="@drawable/settings"
+                    android:onClick="onClickSettings"
+                    android:text="설정"
+                    android:textColor="@color/white" />
+
+                <ImageButton
+                    android:id="@+id/drowCapture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/circle" />
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/bottombutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:backgroundTint="#3298DB"
+                android:onClick="onBtnClick"
+                android:text="드로우"
+                android:layout_margin="5dp"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/bottombutton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onBtnClick"
+                android:layout_margin="5dp"
+                android:background="@drawable/button"
+                android:text="스티커" />
+
+            <Button
+                android:id="@+id/bottombutton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onBtnClick"
+                android:layout_margin="5dp"
+                android:background="@drawable/button"
+                android:text="페이스" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/shutterImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="invisible">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="로딩중입니다..."
+            android:textSize="34sp"></TextView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="500dp"/>
+
+    </FrameLayout>
+
+</RelativeLayout>

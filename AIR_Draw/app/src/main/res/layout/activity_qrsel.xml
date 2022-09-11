@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sticker.StickerActivity">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/glSsurfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/r_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/white">
+
+
+            <ImageButton
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/home"
+                android:maxWidth="35dp"
+                android:maxHeight="35dp"
+                android:onClick="onBtnClick"
+                android:scaleType="fitCenter"
+                android:text="홈" />
+
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/topbutton3"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_centerHorizontal="true"-->
+            <!--                android:adjustViewBounds="true"-->
+            <!--                android:background="@drawable/change"-->
+            <!--                android:maxWidth="35dp"-->
+            <!--                android:maxHeight="35dp"-->
+            <!--                android:scaleType="fitCenter"-->
+            <!--                android:text="전환" />-->
+
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/topbutton2"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_alignParentRight="true"-->
+            <!--                android:layout_marginRight="16dp"-->
+            <!--                android:adjustViewBounds="true"-->
+            <!--                android:background="@drawable/gallery"-->
+            <!--                android:maxWidth="35dp"-->
+            <!--                android:maxHeight="35dp"-->
+            <!--                android:scaleType="fitCenter"-->
+            <!--                android:text="앨범" />-->
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/qrModeSel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/topBar"
+            android:layout_marginTop="1dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="111dp"
+                android:layout_height="103dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginBottom="1dp"
+                android:rotation="-180"
+                app:srcCompat="@drawable/reticule" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="111dp"
+                android:layout_height="103dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:rotation="90"
+                app:srcCompat="@drawable/reticule" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="111dp"
+                android:layout_height="103dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                app:srcCompat="@drawable/reticule" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="111dp"
+                android:layout_height="103dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:rotation="-90"
+                app:srcCompat="@drawable/reticule" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="false"
+                android:layout_centerInParent="true"
+                android:foregroundGravity="center_horizontal" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

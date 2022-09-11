@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_neutral_variant90"
+    tools:context=".HomeActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="35dp"
+        >
+
+        <TextView
+            android:id="@+id/titleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="AIR DRAW"
+            android:textColor="@color/material_dynamic_neutral_variant30"
+            android:textSize="64sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp">
+
+            <Button
+                android:id="@+id/homebutton"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@drawable/selectmode"
+                android:text="선택 모드"
+                android:textColor="#00ff0000"
+                />
+
+
+            <Button
+                android:id="@+id/homebutton2"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_weight="1"
+                android:text="인식 모드"
+                android:textColor="#00ff0000"
+                android:background="@drawable/qrmode"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <Button
+                android:id="@+id/homebutton3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/bobross"
+                android:text="자유 모드"
+                android:textColor="#00ff0000"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+*.iml
+.gradle
+AIR_Draw/local.properties
+AIR_Draw/.idea/caches
+AIR_Draw/.idea/libraries
+AIR_Draw/.idea/modules.xml
+AIR_Draw/.idea/workspace.xml
+AIR_Draw/.idea/navEditor.xml
+AIR_Draw/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties

@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/content"
+    tools:context="com.example.air_draw.ThemeSelectActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/r_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/themeModeSel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/baccc1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:paddingTop="20dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:text="테마 선택"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    android:background="#00ff0000"
+                    android:textColor="@color/white"
+                    />
+
+                <Button
+                    android:id="@+id/pokemon"
+                    android:layout_width="600dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="75dp"
+                    android:background="@drawable/pokemonn"
+                    android:onClick="onBtnClick"
+                    android:text="" />
+
+                <Button
+                    android:id="@+id/amongus"
+                    android:layout_width="600dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="75dp"
+                    android:background="@drawable/amongg"
+                    android:onClick="onBtnClick"
+                    android:text="" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="로딩중입니다..."
+            android:textSize="34sp"></TextView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="500dp" />
+
+    </FrameLayout>
+
+
+</RelativeLayout>
